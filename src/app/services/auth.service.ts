@@ -7,7 +7,7 @@ import { catchError, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3001/auth';
+  private apiUrl = 'http://localhost:3001/api/auth';
   private authSubject = new BehaviorSubject<boolean>(false);
   authStatus$ = this.authSubject.asObservable();
 
