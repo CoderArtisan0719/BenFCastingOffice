@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, BehaviorSubject, throwError, } from 'rxjs';
+import { catchError, tap, } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -39,8 +39,20 @@ export class AuthService {
     this.authSubject.next(!!token);
   }
 
-  private handleError(error: any): Observable<never> {
-    console.error('An error occurred:', error);
-    throw new Error('Something went wrong; please try again later.');
+  private handleError(error: HttpErrorResponse): Observable<never> {
+    let errorMessage = 'Er is een onbekende fout opgetreden';
+
+    if (error.error.message) {
+      // Client-side error
+      errorMessage = error.error.message;
+    } else {
+      // Server-side error
+      if (error.error && error.error.error) {
+        errorMessage = error.error.error;
+      } else if (error.status === 0) {
+        errorMessage = 'Kan geen verbinding maken met de server';
+      }
+    }
+    return throwError(() => new Error(errorMessage));
   }
 }

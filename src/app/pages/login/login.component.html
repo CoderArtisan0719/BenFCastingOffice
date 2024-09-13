@@ -7,6 +7,9 @@
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>e-mailadres</mat-label>
             <input matInput formControlName="email" type="email" required />
+            <mat-error *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched">
+              Voer het juiste e-mailadres in
+            </mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="fill" class="full-width">
@@ -17,15 +20,19 @@
               type="password"
               required
             />
+            <mat-error *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
+              minimale lengte is 6
+            </mat-error>
           </mat-form-field>
 
           <a href="#" class="forgot-password">Wachtwoord vergeten?</a>
 
           <mat-checkbox formControlName="rememberMe">Onthouden</mat-checkbox>
 
-          <button mat-raised-button color="primary" class="full-width">
+          <button mat-raised-button color="primary" class="full-width" [disabled]="loginForm.invalid">
             Inloggen
           </button>
+          <mat-error *ngIf="loginError">{{ loginError }}</mat-error>
         </form>
       </mat-card-content>
     </mat-card>
