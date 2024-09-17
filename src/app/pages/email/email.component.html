@@ -2,25 +2,25 @@
   <div class="form-container">
     <form [formGroup]="emailForm" (ngSubmit)="sendEmail()">
       <div>
-        <label>Recipients</label>
+        <label>Ontvangers</label>
         <mat-radio-group formControlName="recipients">
-          <mat-radio-button  class="custom-radio" value="all-eligible">All eligible members</mat-radio-button>
-          <mat-radio-button  class="custom-radio" value="all-registrations">All registrations</mat-radio-button>
-          <mat-radio-button  class="custom-radio" value="pre-selection">The pre-selection</mat-radio-button>
-          <mat-radio-button  class="custom-radio" value="unselected">All unselected</mat-radio-button>
-          <mat-radio-button  class="custom-radio" value="casting">All people in casting</mat-radio-button>
-          <mat-radio-button  class="custom-radio" value="customer-selection">Customer selection</mat-radio-button>
+          <mat-radio-button  class="custom-radio" value="all-eligible">Alle in aanmerking komende leden</mat-radio-button>
+          <mat-radio-button  class="custom-radio" value="all-registrations">Alle registraties</mat-radio-button>
+          <mat-radio-button  class="custom-radio" value="pre-selection">De voorselectie</mat-radio-button>
+          <mat-radio-button  class="custom-radio" value="unselected">Alle niet-geselecteerden</mat-radio-button>
+          <mat-radio-button  class="custom-radio" value="casting">Alle mensen in casting</mat-radio-button>
+          <mat-radio-button  class="custom-radio" value="customer-selection">Klantselectie</mat-radio-button>
         </mat-radio-group>
       </div>
       <mat-form-field appearance="outline">
-        <mat-label>Subject</mat-label>
-        <input matInput formControlName="subject" placeholder="Enter subject" />
+        <mat-label>Onderwerp</mat-label>
+        <input matInput formControlName="subject" placeholder="Onderwerp invoeren" />
       </mat-form-field>
       <div>
-        <label>Content</label>
-        <quill-editor formControlName="richContent" [modules]="richContent" theme="snow"></quill-editor>
+        <label>Inhoud</label>
+        <quill-editor formControlName="richContent" [modules]="richContent" [placeholder]="'Voer hier uw tekst in...'" theme="snow"></quill-editor>
       </div>
-      <button class="email-send" mat-raised-button color="primary" type="submit" [disabled]="!emailForm.valid">Send</button>
+      <button class="email-send" mat-raised-button color="primary" type="submit" [disabled]="!emailForm.valid">Verzenden</button>
     </form>
   </div>
 </div>

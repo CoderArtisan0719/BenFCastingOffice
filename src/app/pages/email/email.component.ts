@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
 import { MatRadioModule } from "@angular/material/radio";
@@ -36,7 +35,6 @@ export class EmailComponent {
       [{ 'color': [] }, { 'background': [] }],
       [{ 'font': [] }],
       [{ 'align': [] }],
-
       ['clean']
     ]
   };
@@ -45,7 +43,7 @@ export class EmailComponent {
   constructor(private fb: FormBuilder) {
     this.emailForm = this.fb.group({
       subject: ['', Validators.required],
-      richContent: ['sdsd', Validators.required],
+      richContent: ['', Validators.required],
       attachment: [null],
       recipients: ['all-eligible', Validators.required]
     });
