@@ -23,6 +23,8 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^6.1.0",
+    "ngx-quill": "^26.0.8",
+    "quill": "^2.0.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },

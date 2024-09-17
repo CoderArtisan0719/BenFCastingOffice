@@ -1,0 +1,86 @@
+.email-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.form-container {
+  max-width: 1240px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  margin-bottom: 20px;
+}
+
+mat-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+quill-editor {
+  margin-bottom: 20px;
+  width: 100%;
+  height: 200px;
+}
+
+button {
+  align-self: flex-end;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+::ng-deep .ql-toolbar {
+  background-color: #e3e3e3;
+  border: 1px solid #e3e3e3 !important;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  padding: 8px;
+}
+
+::ng-deep .ql-toolbar button {
+  background-color: #fff;
+  border: none;
+  color: #424242;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  margin-right: 5px;
+  transition: background-color 0.2s;
+}
+
+::ng-deep .ql-toolbar button:hover {
+  background-color: #f0f0f0;
+}
+
+::ng-deep .ql-toolbar button.ql-active {
+  background-color: #1976d2;
+  color: #fff;
+}
+
+::ng-deep .ql-toolbar .ql-picker {
+  color: #424242;
+  border: none;
+}
+
+::ng-deep .ql-container {
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-size: 14px;
+  border: 2px solid #e3e3e3 !important;
+}
+
+

@@ -57,11 +57,11 @@ button {
 }
 
 ::ng-deep .success-snackbar {
-  background-color: #4caf50; /* Green background for success */
-  color: white;              /* White text */
+  background-color: #4caf50;
+  color: white;
 }
 
 ::ng-deep .error-snackbar {
-  background-color: #f44336; /* Red background for error */
-  color: white;              /* White text */
+  background-color: #f44336;
+  color: white;
 }
