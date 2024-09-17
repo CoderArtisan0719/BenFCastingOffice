@@ -39,44 +39,39 @@ export class EmailComponent {
 
       ['clean']
     ]
-  };  // Holds the rich text content
-  selectedFiles: File[] = [];  // Stores multiple files for upload
+  };
+  selectedFiles: File[] = [];
 
   constructor(private fb: FormBuilder) {
     this.emailForm = this.fb.group({
       subject: ['', Validators.required],
-      richContent: ['sdsd', Validators.required],  // Quill editor form control
+      richContent: ['sdsd', Validators.required],
       attachment: [null],
-      recipients: ['all-eligible', Validators.required] // The radio button selection
+      recipients: ['all-eligible', Validators.required]
     });
   }
 
-  // Handles file change for multiple attachments
   onFileChange(event: any) {
     this.selectedFiles = Array.from(event.target.files);
     this.emailForm.patchValue({ attachment: this.selectedFiles });
   }
 
-  // Handles file removal
   removeFile(index: number) {
     this.selectedFiles.splice(index, 1);
     this.emailForm.patchValue({ attachment: this.selectedFiles });
   }
 
-  // Send email function
   sendEmail() {
     if (this.emailForm.valid) {
       const formData = new FormData();
       formData.append('subject', this.emailForm.get('subject')?.value);
       formData.append('richContent', this.emailForm.get('richContent')?.value);
 
-      // Append selected files
       this.selectedFiles.forEach((file, index) => {
         formData.append('attachments[]', file, file.name);
       });
 
       console.log('Sending email with data:', formData);
-      // Handle form submission (API call, etc.)
     }
   }
 }

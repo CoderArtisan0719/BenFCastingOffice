@@ -1,44 +1,26 @@
 <div class="email-container">
   <div class="form-container">
     <form [formGroup]="emailForm" (ngSubmit)="sendEmail()">
-
       <div>
         <label>Recipients</label>
         <mat-radio-group formControlName="recipients">
-          <mat-radio-button value="all-eligible">All eligible members</mat-radio-button>
-          <mat-radio-button value="all-registrations">All registrations</mat-radio-button>
-          <mat-radio-button value="pre-selection">The pre-selection</mat-radio-button>
-          <mat-radio-button value="unselected">All unselected</mat-radio-button>
-          <mat-radio-button value="casting">All people in casting</mat-radio-button>
-          <mat-radio-button value="customer-selection">Customer selection</mat-radio-button>
+          <mat-radio-button  class="custom-radio" value="all-eligible">All eligible members</mat-radio-button>
+          <mat-radio-button  class="custom-radio" value="all-registrations">All registrations</mat-radio-button>
+          <mat-radio-button  class="custom-radio" value="pre-selection">The pre-selection</mat-radio-button>
+          <mat-radio-button  class="custom-radio" value="unselected">All unselected</mat-radio-button>
+          <mat-radio-button  class="custom-radio" value="casting">All people in casting</mat-radio-button>
+          <mat-radio-button  class="custom-radio" value="customer-selection">Customer selection</mat-radio-button>
         </mat-radio-group>
       </div>
-
       <mat-form-field appearance="outline">
         <mat-label>Subject</mat-label>
         <input matInput formControlName="subject" placeholder="Enter subject" />
       </mat-form-field>
-
       <div>
         <label>Content</label>
         <quill-editor formControlName="richContent" [modules]="richContent" theme="snow"></quill-editor>
       </div>
-
-      <!-- File Upload Section -->
-<!--      <div>-->
-<!--        <label>Attachments</label>-->
-<!--        <input type="file" (change)="onFileChange($event)" multiple />-->
-<!--        <div *ngIf="selectedFiles.length > 0">-->
-<!--          <ul>-->
-<!--            <li *ngFor="let file of selectedFiles; let i = index">-->
-<!--              {{ file.name }}-->
-<!--              <button mat-button color="warn" (click)="removeFile(i)">Remove</button>-->
-<!--            </li>-->
-<!--          </ul>-->
-<!--        </div>-->
-<!--      </div>-->
-
-      <button mat-raised-button color="primary" type="submit" [disabled]="!emailForm.valid">Send</button>
+      <button class="email-send" mat-raised-button color="primary" type="submit" [disabled]="!emailForm.valid">Send</button>
     </form>
   </div>
 </div>

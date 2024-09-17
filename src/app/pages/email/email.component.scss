@@ -29,10 +29,6 @@ quill-editor {
   height: 200px;
 }
 
-button {
-  align-self: flex-end;
-}
-
 ul {
   list-style-type: none;
   padding: 0;
@@ -42,6 +38,32 @@ li {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
+}
+
+.mat-accent.mat-mdc-radio-button {
+  --mdc-radio-selected-focus-icon-color: #4caf50;
+  --mdc-radio-selected-hover-icon-color: #4caf50;
+  --mdc-radio-selected-icon-color: #4caf50;
+  --mdc-radio-selected-pressed-icon-color: #4caf50;
+  --mat-radio-checked-ripple-color: #4caf50;
+}
+
+::ng-deep .email-send {
+  margin-top: 40px;
+  background-color: #4caf50 !important;
+  color: white !important;
+}
+
+::ng-deep .email-send:hover {
+  background-color: #388e3c !important; /* Darken color on hover */
+}
+
+::ng-deep .email-send:active {
+  background-color: #2e7d32 !important; /* Darker color on active */
+}
+
+::ng-deep .email-send:disabled {
+  background-color: #979292 !important; /* Darker color on active */
 }
 
 ::ng-deep .ql-toolbar {
@@ -68,8 +90,7 @@ li {
 }
 
 ::ng-deep .ql-toolbar button.ql-active {
-  background-color: #1976d2;
-  color: #fff;
+  background-color: white;
 }
 
 ::ng-deep .ql-toolbar .ql-picker {
